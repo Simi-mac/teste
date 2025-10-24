@@ -151,7 +151,9 @@ const Questionnaire: React.FC<QuestionnaireProps> = ({ onComplete }) => {
     );
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form name="lead" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
+            {/* Este campo oculto é OBRIGATÓRIO para a Netlify */}
+<input type="hidden" name="form-name" value="lead" />
              <p className="text-slate-700 mb-6">Para começar, preciso entender um pouco sobre sua vida financeira. Por favor, responda às perguntas abaixo. Suas respostas nos ajudarão a traçar o melhor caminho para você!</p>
              <div className="mb-6 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                 <label htmlFor="name" className="block text-slate-800 mb-2 font-medium">Qual é o seu nome?</label>
